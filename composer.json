@@ -1,7 +1,15 @@
 {
     "name": "omaresmaeel/laravel-query-optimizer",
-    "description": "An AI powered optimizer for laravel query builder",
+    "description": "An AI powered optimizer for laravel eloquent and query builder",
     "license": "MIT",
+    "keywords": [
+        "laravel",
+        "database",
+        "performace",
+        "optimization",
+        "openai"
+    ],
+    "homepage": "https://github.com/omaresmael/laravel-query-optimizer",
     "autoload": {
         "psr-4": {
             "Omaresmaeel\\LaravelQueryOptimizer\\": "src"
@@ -26,6 +34,7 @@
         "pestphp/pest": "^1.22"
     },
     "config": {
+        "sort-packages": true,
         "allow-plugins": {
             "pestphp/pest-plugin": true,
             "php-http/discovery": true
@@ -38,5 +47,7 @@
         "providers": [
             "Omaresmaeel\\LaravelQueryOptimizer\\LaravelQueryOptimizerServiceProvider"
         ]
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
