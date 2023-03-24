@@ -33,5 +33,10 @@
     },
     "require": {
         "openai-php/laravel": "^0.4.0"
+    },
+    "extra": {
+        "providers": [
+            "Omaresmaeel\\LaravelQueryOptimizer\\LaravelQueryOptimizerServiceProvider"
+        ]
     }
 }
