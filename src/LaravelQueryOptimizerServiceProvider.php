@@ -1,10 +1,11 @@
 <?php
 
-namespace src;
+namespace Omaresmaeel\LaravelQueryOptimizer;
 
 use Illuminate\Database\Query\Builder as QueryBuilder;
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 use Illuminate\Support\ServiceProvider;
+
 
 
 class LaravelQueryOptimizerServiceProvider extends ServiceProvider

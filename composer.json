@@ -1,0 +1,37 @@
+{
+    "name": "omaresmaeel/laravel-query-optimizer",
+    "description": "An AI powered optimizer for laravel query builder",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Omaresmaeel\\LaravelQueryOptimizer\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Omaresmaeel\\LaravelQueryOptimizer\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "omaresmaeel",
+            "email": "omaresmael590@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "roave/security-advisories": "dev-latest",
+        "orchestra/testbench": "^7.22",
+        "phpunit/phpunit": "^9.6",
+        "nunomaduro/collision": "^6.1",
+        "pestphp/pest": "^1.22"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "php-http/discovery": true
+        }
+    },
+    "require": {
+        "openai-php/laravel": "^0.4.0"
+    }
+}

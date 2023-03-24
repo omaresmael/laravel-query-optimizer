@@ -1,11 +1,12 @@
 <?php
 
-namespace src;
+namespace Omaresmaeel\LaravelQueryOptimizer;
 
 use Illuminate\Contracts\Database\Query\Builder as QueryBuilder;
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
+use Omaresmaeel\LaravelQueryOptimizer\Http\Client;
 
 
 class Optimizer

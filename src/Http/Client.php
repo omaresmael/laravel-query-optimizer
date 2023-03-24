@@ -1,6 +1,6 @@
 <?php
 
-namespace src;
+namespace Omaresmaeel\LaravelQueryOptimizer\Http;
 
 use OpenAI\Laravel\Facades\OpenAI;
 
