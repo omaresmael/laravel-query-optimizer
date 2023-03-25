@@ -27,7 +27,7 @@ class Optimizer
         return $this;
     }
 
-    public function run(): array
+    public function get(): array
     {
         return DB::select(DB::raw($this->optimizedQuery), $this->builder->getBindings());
     }
