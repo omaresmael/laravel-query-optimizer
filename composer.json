@@ -27,11 +27,12 @@
         }
     ],
     "require-dev": {
-        "roave/security-advisories": "dev-latest",
-        "orchestra/testbench": "^7.22",
-        "phpunit/phpunit": "^9.6",
+        "laravel/pint": "^1.7",
         "nunomaduro/collision": "^6.1",
-        "pestphp/pest": "^1.22"
+        "orchestra/testbench": "^7.22",
+        "pestphp/pest": "^1.22",
+        "phpunit/phpunit": "^9.6",
+        "roave/security-advisories": "dev-latest"
     },
     "config": {
         "sort-packages": true,
@@ -47,6 +48,10 @@
         "providers": [
             "Omaresmaeel\\LaravelQueryOptimizer\\LaravelQueryOptimizerServiceProvider"
         ]
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "style": "vendor/bin/pint"
     },
     "minimum-stability": "dev",
     "prefer-stable": true

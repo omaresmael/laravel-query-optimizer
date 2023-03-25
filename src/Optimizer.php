@@ -8,19 +8,22 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 use Omaresmaeel\LaravelQueryOptimizer\Http\Client;
 
-
 class Optimizer
 {
     private string $optimizedQuery = '';
-    private string $reasoning = '';
-    private string $suggestions = '';
-    private EloquentBuilder | QueryBuilder $builder;
 
-    public function optimize(EloquentBuilder | QueryBuilder $builder): self
+    private string $reasoning = '';
+
+    private string $suggestions = '';
+
+    private EloquentBuilder|QueryBuilder $builder;
+
+    public function optimize(EloquentBuilder|QueryBuilder $builder): self
     {
         $this->builder = $builder;
         $queryPrompt = $this->getPrompt();
         $this->getGptResponse($queryPrompt);
+
         return $this;
     }
 
@@ -33,6 +36,7 @@ class Optimizer
     {
         return $this->optimizedQuery;
     }
+
     public function explain(): array
     {
         return [
@@ -41,7 +45,8 @@ class Optimizer
             'suggestions' => $this->suggestions,
         ];
     }
-    private function getPrompt() : string
+
+    private function getPrompt(): string
     {
         return (string) view('prompt', [
             'query' => $this->builder->toSql(),
@@ -57,9 +62,9 @@ class Optimizer
     {
         $array = [];
         foreach (explode(PHP_EOL, $result) as $element) {
-            $parts = explode(": ", $element, 2);
-            $key = trim(Arr::get($parts,0));
-            $value = trim(Arr::get($parts,1),'\n"') ?: null;
+            $parts = explode(': ', $element, 2);
+            $key = trim(Arr::get($parts, 0));
+            $value = trim(Arr::get($parts, 1), '\n"') ?: null;
             $array[$key] = $value;
         }
 
@@ -67,6 +72,4 @@ class Optimizer
         $this->reasoning = $array['reasoning'];
         $this->suggestions = $array['suggestions'];
     }
-
-
 }

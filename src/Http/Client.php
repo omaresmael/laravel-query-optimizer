@@ -15,5 +15,4 @@ class Client
             'max_tokens' => $maxTokens,
         ])['choices'][0]['text'];
     }
-
 }
