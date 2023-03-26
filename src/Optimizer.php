@@ -49,7 +49,7 @@ class Optimizer
 
     private function getPrompt(): string
     {
-        return (string) view('prompt', [
+        return (string) view('optimizer::prompt', [
             'query' => $this->builder->toSql(),
         ]);
     }
