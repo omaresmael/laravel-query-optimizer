@@ -21,5 +21,7 @@ class LaravelQueryOptimizerServiceProvider extends ServiceProvider
         QueryBuilder::macro('optimize', function () {
             return app(Optimizer::class)->optimize($this);
         });
+
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'optimizer');
     }
 }
