@@ -1,6 +1,8 @@
 # laravel-query-optimizer
 Optimize laravel DB or eloquent queries using openAI
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/omaresmaeel/laravel-query-optimizer.svg?style=flat-square)](https://packagist.org/packages/omaresmaeel/laravel-query-optimizer)
+[![Total Downloads](https://img.shields.io/packagist/dt/omaresmaeel/laravel-query-optimizer.svg?style=flat-square)](https://packagist.org/packages/omaresmaeel/laravel-query-optimizer)
 # Installation
 
 First, install the package using composer
@@ -99,13 +101,14 @@ the array format will be
 
 ## Credits
 
-- [Omar Esmail](https://github.com/omaresmael)
+- [Omar Esmaeel](https://github.com/omaresmael)
 
 ## License
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
 ## Inspiration
-This package is inspired by [laravel-ask-database](https://github.com/beyondcode/laravel-ask-database) package
+This package is inspired by [laravel-ask-database](https://github.com/beyondcode/laravel-ask-database) package <br>
+Thanks for the great work [Marcel Pociot](https://github.com/mpociot)
 
 
 
