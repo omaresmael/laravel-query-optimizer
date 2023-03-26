@@ -1,5 +1,5 @@
 {
-    "name": "omaresmaeel/laravel-query-optimizer",
+    "name": "omaresmael/laravel-query-optimizer",
     "description": "An AI powered optimizer for laravel eloquent and query builder",
     "license": "MIT",
     "keywords": [
