@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 use Omaresmaeel\LaravelQueryOptimizer\Http\Client;
+use RuntimeException;
 
 class Optimizer
 {
@@ -67,7 +68,9 @@ class Optimizer
             $value = trim(Arr::get($parts, 1), '\n"') ?: null;
             $array[$key] = $value;
         }
-
+        if (! isset($array['optimizedQuery'], $array['reasoning'], $array['suggestions'])) {
+            throw new RuntimeException('Invalid response from GPT, please try again.');
+        }
         $this->optimizedQuery = $array['optimizedQuery'];
         $this->reasoning = $array['reasoning'];
         $this->suggestions = $array['suggestions'];
