@@ -49,9 +49,9 @@
             "providers": [
                 "Omaresmaeel\\LaravelQueryOptimizer\\LaravelQueryOptimizerServiceProvider"
             ]
+        }
     },
     "scripts": {
-        "test": "vendor/bin/pest",
         "style": "vendor/bin/pint"
     },
     "minimum-stability": "dev",
