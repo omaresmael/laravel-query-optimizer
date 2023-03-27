@@ -1,8 +1,6 @@
 # laravel-query-optimizer
 Optimize laravel DB or eloquent queries using openAI 
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/omaresmael/laravel-query-optimizer.svg?style=flat-square)](https://packagist.org/packages/omaresmael/laravel-query-optimizer)
-[![Total Downloads](https://img.shields.io/packagist/dt/omaresmael/laravel-query-optimizer.svg?style=flat-square)](https://packagist.org/packages/omaresmael/laravel-query-optimizer)
 # Installation
 
 First, install the package using composer
