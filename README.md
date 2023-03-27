@@ -1,5 +1,5 @@
 # laravel-query-optimizer
-Optimize laravel DB or eloquent queries using openAI 
+Optimize laravel DB or eloquent read queries using openAI API, and get insights on how you can make your queries faster 
 
 # Installation
 
