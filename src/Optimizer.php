@@ -19,6 +19,10 @@ class Optimizer
 
     private EloquentBuilder|QueryBuilder $builder;
 
+    public function __construct(private Client $client)
+    {
+    }
+
     public function optimize(EloquentBuilder|QueryBuilder $builder): self
     {
         $this->builder = $builder;
@@ -56,7 +60,7 @@ class Optimizer
 
     private function getGptResponse(string $prompt): void
     {
-        $this->buildResult(Client::optimizeRequest($prompt));
+        $this->buildResult($this->client->optimizeRequest($prompt));
     }
 
     private function buildResult(string $result): void
