@@ -3,17 +3,16 @@
 use Illuminate\Support\Facades\DB;
 use Omaresmaeel\LaravelQueryOptimizer\Optimizer;
 
-
 beforeEach(function () {
-   $this->builder = DB::query()
-        ->select('users.id', 'users.name')
-        ->from('users')
-        ->whereExists(function ($query) {
-            $query->select('*')
-                ->from('posts')
-                ->whereColumn('posts.user_id', 'users.id')
-                ->where('title', 'Awesome post');
-        });
+    $this->builder = DB::query()
+         ->select('users.id', 'users.name')
+         ->from('users')
+         ->whereExists(function ($query) {
+             $query->select('*')
+                 ->from('posts')
+                 ->whereColumn('posts.user_id', 'users.id')
+                 ->where('title', 'Awesome post');
+         });
 
     $this->arrayResponse = [
         'optimizedQuery' => 'SELECT `users`.`id`, `users`.`name` FROM `users` INNER JOIN `posts` ON `posts`.`user_id` = `users`.`id` WHERE `title` = ?',
@@ -49,6 +48,5 @@ it('gets the same result as the original query', function () {
     $optimizedQuery = $optimizer->optimize($this->builder)->get();
     $originalQuery = $this->builder->get();
 
-    $this->expect($optimizedQuery)-> toEqual($originalQuery);
-
+    $this->expect($optimizedQuery)->toEqual($originalQuery);
 });
