@@ -5,6 +5,7 @@ namespace Omaresmaeel\LaravelQueryOptimizer;
 use Illuminate\Contracts\Database\Query\Builder as QueryBuilder;
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Omaresmaeel\LaravelQueryOptimizer\Http\Client;
 use RuntimeException;
@@ -32,9 +33,9 @@ class Optimizer
         return $this;
     }
 
-    public function get(): array
+    public function get(): Collection
     {
-        return DB::select(DB::raw($this->optimizedQuery), $this->builder->getBindings());
+        return Collect(DB::select(DB::raw($this->optimizedQuery), $this->builder->getBindings()));
     }
 
     public function toSql(): string

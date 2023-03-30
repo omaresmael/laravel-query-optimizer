@@ -3,8 +3,9 @@
 use Illuminate\Support\Facades\DB;
 use Omaresmaeel\LaravelQueryOptimizer\Optimizer;
 
+
 beforeEach(function () {
-    $this->builder = DB::query()
+   $this->builder = DB::query()
         ->select('users.id', 'users.name')
         ->from('users')
         ->whereExists(function ($query) {
@@ -42,4 +43,12 @@ it('throws exception if the response is not correctly formatted', function () {
 
     $optimizer = new Optimizer(mockClient($this->arrayResponse, false));
     $optimizer->optimize($this->builder)->explain();
+});
+it('gets the same result as the original query', function () {
+    $optimizer = new Optimizer(mockClient($this->arrayResponse));
+    $optimizedQuery = $optimizer->optimize($this->builder)->get();
+    $originalQuery = $this->builder->get();
+
+    $this->expect($optimizedQuery)-> toEqual($originalQuery);
+
 });
