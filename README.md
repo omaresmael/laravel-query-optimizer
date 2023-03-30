@@ -26,7 +26,7 @@ and that's it, you are ready to go
 # Usage
 this package can help you optimize your eloquent or DB queries using openAI 
 ```php
-User::query() //can be applied to `DB facade` as well
+User::query() //can be applied to `DB facade` as well (see tests)
     ->select('users.id', 'users.name')
     ->whereHas('roles', function ($query) {
         $query->where('name', 'author');
