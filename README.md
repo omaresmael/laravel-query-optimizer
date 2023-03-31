@@ -16,8 +16,11 @@ First, install the package using composer
 ```bash
 composer require omaresmael/laravel-query-optimizer --dev
 ```
-
-Then, add the openAPI key to your `.env` file
+Then, publish openAI configuration file
+```bash
+php artisan vendor:publish --provider="OpenAI\Laravel\ServiceProvider"
+```
+Lastly, add the openAPI key to your `.env` file
 ```bash
 OPENAI_API_KEY=sk-...
 ```
